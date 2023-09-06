@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 /*
  * @project_name: spotify_backend
  * @package: com.spotify.entities
@@ -16,23 +14,22 @@ import java.util.List;
  */
 @Getter
 @Setter
-@Entity
-@Table(name = "genres")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Genres {
+@Entity
+@Table(name = "user_files")
+public class UserFiles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "genres_name")
-    private String genresName;
+    @Column(name = "file_name")
+    private String fileName;
 
+    @Column(name = "file_size")
+    private float fileSize;
 
-    @Column(name = "image", length = 500)
-    private String image;
-
-
-    @OneToMany(mappedBy = "genres")
-    private List<Albums> albums;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "users_id")
+    private Users users;
 }

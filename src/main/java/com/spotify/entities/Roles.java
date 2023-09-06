@@ -13,6 +13,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -26,4 +28,7 @@ public class Roles {
 
     @Column(name = "role_name")
     private String roleName;
+
+    @OneToMany(mappedBy = "roles")
+    private List<Users> users;
 }

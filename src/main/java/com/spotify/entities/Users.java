@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /*
  * @project_name: spotify_backend
@@ -54,4 +55,18 @@ public class Users {
 
     @Column(name = "avatar")
     private String avatar;
+
+    @ManyToOne(fetch =  FetchType.LAZY)
+    @JoinColumn(name = "roles_id")
+    private Roles roles;
+
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    private List<UserFiles> userFiles;
+
+
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    private List<HistoryListens> historyListens;
+
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    private List<PlayLists> playLists;
 }

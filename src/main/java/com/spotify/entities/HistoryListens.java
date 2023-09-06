@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.time.LocalDate;
 
 /*
  * @project_name: spotify_backend
@@ -17,22 +17,28 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "genres")
+@Table(name = "history_listens")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Genres {
+public class HistoryListens {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "genres_name")
-    private String genresName;
+    @ManyToOne
+    @JoinColumn(name="users_id")
+    private Users users;
+
+    @ManyToOne
+    @JoinColumn(name = "songs-id")
+    private Songs songs;
+
+    @Column(name = "count_listens")
+    private  int countListen;
+
+    @Column(name = "date")
+    private LocalDate date;
 
 
-    @Column(name = "image", length = 500)
-    private String image;
-
-
-    @OneToMany(mappedBy = "genres")
-    private List<Albums> albums;
 }

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /*
  * @project_name: spotify_backend
@@ -34,13 +35,19 @@ public class Artists {
     @Column(name = "birth_day")
     private LocalDate birthDay;
 
-    @Column(name = "description", columnDefinition = "text")
+    @Column(name = "description")
     private String description;
 
     @Column(name = "country_active")
     private String countryActive;
 
-    @Column(name = "image", columnDefinition = "varchar(500)")
+    @Column(name = "image", length = 500)
     private String image;
 
+    @OneToMany(mappedBy = "artistSongId.artists")
+    private List<ArtistSongs> artistSongs;
+
+
+    @OneToMany(mappedBy = "artistAlbumId.artists")
+    private List<ArtistAlbums> artistAlbums;
 }

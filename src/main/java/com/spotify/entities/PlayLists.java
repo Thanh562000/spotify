@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 /*
  * @project_name: spotify_backend
  * @package: com.spotify.entities
@@ -17,22 +15,23 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "genres")
+@Table(name = "play_lists")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Genres {
+public class PlayLists {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "genres_name")
-    private String genresName;
+    @Column(name = "play_list_name")
+    private String playlistName;
 
 
-    @Column(name = "image", length = 500)
-    private String image;
+    @Column(name = "favorite_order")
+    private int favoriteOrder;
 
-
-    @OneToMany(mappedBy = "genres")
-    private List<Albums> albums;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "users_id")
+    private Users users;
 }

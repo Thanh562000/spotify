@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 /*
  * @project_name: spotify_backend
  * @package: com.spotify.entities
@@ -35,7 +37,7 @@ public class Songs {
     @Column(name = "media_url")
     private String mediaUrl;
 
-    @Column(name = "lyrics", columnDefinition = "text")
+    @Column(name = "lyrics")
     private String lyrics;
 
     @Column(name = "image")
@@ -46,4 +48,17 @@ public class Songs {
 
     @Column(name = "count_listen")
     private long countListen;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "genres_id")
+    private Genres genres;
+
+    @OneToMany(mappedBy = "artistSongId.songs", cascade = CascadeType.ALL)
+    private List<ArtistSongs> artistSongs;
+
+    @OneToMany(mappedBy = "albumSongId.songs", cascade = CascadeType.ALL)
+    private List<AlbumSongs> albumSongs;
+
+    @OneToMany(mappedBy = "songs", cascade = CascadeType.ALL)
+    private List<HistoryListens> historyListens;
 }
