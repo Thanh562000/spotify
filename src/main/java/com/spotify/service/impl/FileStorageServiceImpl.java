@@ -7,7 +7,5 @@ package com.spotify.service.impl;
  * @version: v1.0
  */
 
-import com.spotify.service.AlbumService;
-
-public interface AlbumServiceImpl extends AlbumService {
+public interface FileStorageServiceImpl {
 }
