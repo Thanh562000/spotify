@@ -7,7 +7,18 @@ package com.spotify.service.impl;
  * @version: v1.0
  */
 
+import com.spotify.entities.Albums;
+import com.spotify.exception.NotFoundEntityException;
+import com.spotify.repository.AlbumRepository;
 import com.spotify.service.AlbumService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface AlbumServiceImpl extends AlbumService {
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class AlbumServiceImpl{
+
+
 }

@@ -7,5 +7,5 @@ package com.spotify.service.impl;
  * @version: v1.0
  */
 
-public interface SongServiceImpl {
+public class SongServiceImpl {
 }

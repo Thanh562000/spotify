@@ -7,5 +7,8 @@ package com.spotify.service;
  * @version: v1.0
  */
 
+
+import java.util.List;
+
 public interface AlbumService {
 }
