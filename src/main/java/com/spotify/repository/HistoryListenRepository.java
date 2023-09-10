@@ -7,5 +7,8 @@ package com.spotify.repository;
  * @version: v1.0
  */
 
-public interface HistoryListenRepository {
+import com.spotify.entities.HistoryListens;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface HistoryListenRepository extends JpaRepository<HistoryListens, Integer> {
 }

@@ -7,5 +7,8 @@ package com.spotify.repository;
  * @version: v1.0
  */
 
-public interface UserFileRepository {
+import com.spotify.entities.UserFiles;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserFileRepository extends JpaRepository<UserFiles,Integer> {
 }

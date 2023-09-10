@@ -7,5 +7,8 @@ package com.spotify.repository;
  * @version: v1.0
  */
 
-public interface GenresRepository {
+import com.spotify.entities.Genres;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface GenresRepository extends JpaRepository<Genres,Integer> {
 }

@@ -7,5 +7,8 @@ package com.spotify.service;
  * @version: v1.0
  */
 
+import com.spotify.dto.response.UserResponseType;
+
 public interface UserService {
+    UserResponseType saveUser(UserResponseType userResponseType);
 }

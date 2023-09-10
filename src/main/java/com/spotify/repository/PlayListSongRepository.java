@@ -7,5 +7,9 @@ package com.spotify.repository;
  * @version: v1.0
  */
 
-public interface PlayListSongRepository {
+
+import com.spotify.entities.PlayListSongs;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PlayListSongRepository  extends JpaRepository<PlayListSongs, Integer> {
 }
