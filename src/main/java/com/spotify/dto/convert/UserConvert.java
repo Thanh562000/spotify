@@ -28,8 +28,8 @@ public class UserConvert {
         response.setActiveStatus(users.getActiveStatus());
         response.setEmail(users.getEmail());
         response.setPhoneNumber(users.getPhoneNumber());
-        //response.setAvatar(users.getAvatar());
-        //response.setRoles(users.getRoles());
+        response.setAvatar(users.getAvatar());
+        response.setRoles(users.getRoles());
         return response;
     }
 

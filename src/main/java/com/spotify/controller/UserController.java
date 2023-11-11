@@ -33,7 +33,7 @@ public class UserController {
         UserResponseType userResponseType = mapper.readValue(userJson, UserResponseType.class);
         response = new ResponseEntity<>(userService.saveUser(userResponseType), HttpStatus.OK);
         return response;
-
     }
+
 
 }

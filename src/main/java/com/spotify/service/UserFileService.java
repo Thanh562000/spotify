@@ -7,5 +7,7 @@ package com.spotify.service;
  * @version: v1.0
  */
 
-public interface UserFileService {
+import com.spotify.dto.response.UseFileRepositoryType;
+
+public interface UserFileService extends BaseService<UseFileRepositoryType, Integer> {
 }

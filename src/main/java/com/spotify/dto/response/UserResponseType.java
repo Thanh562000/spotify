@@ -26,6 +26,6 @@ public class UserResponseType {
     private int activeStatus;
     private String email;
     private String phoneNumber;
-    //private String avatar;
-   // private Roles roles;
+    private String avatar;
+    private Roles roles;
 }

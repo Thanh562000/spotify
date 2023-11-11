@@ -8,4 +8,7 @@ package com.spotify.ultils;
  */
 
 public class Constraints {
+    //admin=1; user=2
+    public static final int ROLE_USER_ID = 2;
+    public static final int ROLE_ADMIN_ID = 1;
 }

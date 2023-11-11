@@ -7,5 +7,12 @@ package com.spotify.service;
  * @version: v1.0
  */
 
-public interface BaseService {
+public interface BaseService<T, K> {
+    T save(T t);
+
+    T update(T t);
+
+    T findById(K id);
+
+    boolean delete(K id);
 }

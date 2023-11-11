@@ -7,5 +7,7 @@ package com.spotify.service;
  * @version: v1.0
  */
 
-public interface SongService {
+import com.spotify.dto.response.SongResponseType;
+
+public interface SongService extends BaseService<SongResponseType, Integer>{
 }

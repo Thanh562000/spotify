@@ -7,5 +7,27 @@ package com.spotify.service.impl;
  * @version: v1.0
  */
 
-public class FileStorageServiceImpl {
+import com.spotify.dto.response.UseFileRepositoryType;
+import com.spotify.service.UserFileService;
+
+public class FileStorageServiceImpl implements UserFileService {
+    @Override
+    public UseFileRepositoryType save(UseFileRepositoryType useFileRepositoryType) {
+        return null;
+    }
+
+    @Override
+    public UseFileRepositoryType update(UseFileRepositoryType useFileRepositoryType) {
+        return null;
+    }
+
+    @Override
+    public UseFileRepositoryType findById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public boolean delete(Integer id) {
+        return false;
+    }
 }
